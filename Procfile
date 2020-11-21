@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn commerce.wsgi
+web: gunicorn project4.wsgi
