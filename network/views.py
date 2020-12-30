@@ -82,6 +82,7 @@ def register(request):
 
 def new_post(request):
     if (request.method == "POST"):
+        # creates new post for user #
         Post = post()
         Post.body = request.POST.get("text")
         Post.user = request.user
@@ -124,6 +125,7 @@ def follow(request):
 
 
 def following(request):
+    # gets all of the post for the users that the current user follows #
     Profile = profile.objects.get(user = request.user)
     objects = post.objects.all().order_by("-date_posted")
     if (len(objects) <= 10):
@@ -141,6 +143,7 @@ def following(request):
 
 
 def like_post(request, post_id):
+    # Saves the like for the post that user clicked on #
     Post = post.objects.get(id = post_id)
 
     if not (request.user in Post.likes.all()):
@@ -154,6 +157,7 @@ def like_post(request, post_id):
 
 @csrf_exempt
 def edit_post(request, post_id):
+    # allows the user to edit their post and save it #
     if (request.method == "POST"):
         data = json.loads(request.body)
         body = data.get("body", "")
