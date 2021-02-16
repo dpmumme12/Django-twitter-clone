@@ -19,6 +19,6 @@ This is a social media site that functions similarly to twitter where you can sh
   - `models.py` - File containing all of the models for the database.
   - `urls.py` - Contains all the urls for the app.
   - `views.py` - Contains all the views for the app.
-- `scraper` - Project directory.
+- `project4` - Project directory.
 
 Demo link https://movie-ratings-scraper.herokuapp.com/
